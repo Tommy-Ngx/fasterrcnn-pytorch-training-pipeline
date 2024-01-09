@@ -7,11 +7,11 @@ VALID_DIR_LABELS: '/home/tommyngu/Data/OsteoLab/Tommy/BreastCancer/Data/SGM1150/
 # Class names.
 CLASSES: [
     '__background__',
-    "Architectural_distortion",
-    "Asymmetry",
-    "Lymphnode",
-     "Mass",
-     "Microcalcification",
+    "architectural_distorsion",
+    "asymmetry",
+    "lymph_node",
+     "mass",
+     "microcalcification",
 ]
 
 # Number of classes (object classes + 1 for background).
