@@ -212,7 +212,7 @@ def main(args):
         frame_count += 1
         # Load all detection to CPU for further operations.
         outputs = [{k: v.to('cpu') for k, v in t.items()} for t in outputs]
-        # Log to JSON?
+        # Log to JSON? more details in the function.
         if args['log_json']:
             log_to_json(orig_image, os.path.join(OUT_DIR, 'log.json'), outputs)
         # Carry further only if there are detected boxes.
