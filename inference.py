@@ -223,9 +223,10 @@ def main(args):
         frame_count += 1
         # Load all detection to CPU for further operations.
         outputs = [{k: v.to('cpu') for k, v in t.items()} for t in outputs]
-        
-        #if args['log_json']:
-        #    log_to_json(orig_image,image_name, os.path.join(OUT_DIR, 'log.json'), outputs)
+        # Log to JSON? more details in the function.
+        if args['log_json']:
+            log_to_json(orig_image,image_name, os.path.join(OUT_DIR, 'log.json'), outputs)
+
         # Carry further only if there are detected boxes.
         if len(outputs[0]['boxes']) != 0:
             draw_boxes, pred_classes, scores = convert_detections(
@@ -248,10 +249,10 @@ def main(args):
                 plt.imshow(orig_image[:, :, ::-1])
                 plt.axis('off')
                 plt.show()
-        # Log to JSON? more details in the function.
-        if args['log_json']:
-            log_to_json(orig_image,image_name, os.path.join(OUT_DIR, 'log.json'), draw_boxes)
-
+                
+        #if args['log_json']:
+        #    log_to_json(orig_image,image_name, os.path.join(OUT_DIR, 'log.json'), outputs)
+            
         cv2.imwrite(f"{OUT_DIR}/{image_name}.jpg", orig_image)
         print(f"Image {i+1} done...")
         print('-'*50)
