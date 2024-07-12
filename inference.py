@@ -113,6 +113,16 @@ def parse_opt():
         action='store_true',
         help='store a json log file in COCO format in the output directory'
     )
+
+    parser.add_argument(
+        '--project-dir',
+        dest='project_dir',
+        default=None,
+        help='save resutls to custom dir instead of `outputs` directory, \
+              --project-dir will be named if not already present',
+        type=str
+    )
+
     args = vars(parser.parse_args())
     return args
 
@@ -129,7 +139,8 @@ def main(args):
         CLASSES = data_configs['CLASSES']
 
     DEVICE = args['device']
-    OUT_DIR = set_infer_dir()
+    #OUT_DIR = set_infer_dir()
+    OUT_DIR = args['project_dir']
 
     # Load the pretrained model
     if args['weights'] is None:
