@@ -140,6 +140,7 @@ def main(args):
     DEVICE = args['device']
     #OUT_DIR = set_infer_dir()
     OUT_DIR = args['project_dir']
+    os.makedirs(OUT_DIR, exist_ok=True)
 
     # Load the pretrained model
     if args['weights'] is None:
