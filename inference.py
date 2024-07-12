@@ -114,7 +114,7 @@ def parse_opt():
         help='store a json log file in COCO format in the output directory'
     )
     parser.add_argument(
-        '--project-dir',
+        '--project_dir',
         dest='project_dir',
         default=None,
         help='save resutls to custom dir instead of `outputs` directory, \
