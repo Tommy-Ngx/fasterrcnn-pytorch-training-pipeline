@@ -289,7 +289,8 @@ def log_to_json(image,image_name, out_path, outputs):
     :param out_path: Path where the JSOn file should be saved.
     :param outputs: Model outputs.
     """
+
     image_info = {
-        "file_name": image_name, "width": image.shape[1], "height": image.shape[0]
+        "file_name": image_name + ".png", "width": image.shape[1], "height": image.shape[0]
     }
     append_annotation_to_coco(outputs[0], image_info, out_path)
