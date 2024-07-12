@@ -113,7 +113,6 @@ def parse_opt():
         action='store_true',
         help='store a json log file in COCO format in the output directory'
     )
-
     parser.add_argument(
         '--project-dir',
         dest='project_dir',
