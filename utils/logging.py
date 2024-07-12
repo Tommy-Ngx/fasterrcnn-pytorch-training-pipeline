@@ -258,10 +258,10 @@ def append_annotation_to_coco(output, image_info, output_filename):
     labels = output['labels'].tolist()
 
     for box, label in zip(boxes, labels):
-        #xmin, ymin, xmax, ymax = box
-        #width = xmax - xmin
-        #height = ymax - ymin
-        xmin, ymin, width, height = box
+        xmin, ymin, xmax, ymax = box
+        width = xmax - xmin
+        height = ymax - ymin
+        #xmin, ymin, width, height = box
 
         annotation = {
             "id": annotation_id,
